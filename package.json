@@ -1,0 +1,22 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "Learning react dir",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava 'app/**/*.test.js' --verbose --require ./other/setup-ava-tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/frismaury/react"
+  },
+  "keywords": [
+    "react",
+    "frismary"
+  ],
+  "author": "frismaury",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^3.5.5"
+  }
+}
