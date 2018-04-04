@@ -22,15 +22,13 @@ class Popular extends React.Component {
   }
 
   render() {
-    var languages = ['All', 'Python', 'Java', 'JavaScript', 'Elm', 'C#', 'Ruby'];
 
     return (
       <div>
         <TopMenu />
         <LanguagesView
-          state={this.state}
-          languages={languages}
-          father={this} />
+          selectedLanguage={this.state.selectedLanguage}
+          onSelect={this.updateLanguage} />
       </div>
     )
   }
