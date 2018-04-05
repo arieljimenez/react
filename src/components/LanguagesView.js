@@ -21,7 +21,7 @@ function LanguagesView(props) {
   )
 }
 
-LanguagesView.PropsType = {
+LanguagesView.propType = {
   selectedLanguage: PropType.string.isRequired,
   onSelect: PropType.func.isRequired,
 }
