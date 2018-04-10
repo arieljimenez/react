@@ -5,14 +5,14 @@ const PARAMS = '?client_id=' + ID + '&client_secret=' + SEC;
 
 
 function getProfile(username) {
-  return axios.get('http://api.github.com/users/' + username + PARAMS)
+  return axios.get('https://api.github.com/users/' + username + PARAMS)
     .then(function (user) {
       return user.data;
     });
 }
 
 function getRepos(username) {
-  return axios.get('http://api.github.com/users/' + username + '/repos' + PARAMS + '&per_page=100');
+  return axios.get('https://api.github.com/users/' + username + '/repos' + PARAMS + '&per_page=100');
 }
 
 function getStartCount(repos) {
