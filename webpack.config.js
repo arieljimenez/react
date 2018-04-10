@@ -1,6 +1,4 @@
-const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const webpack = require('webpack');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
   template: "./src/static/index.html",
@@ -16,9 +14,6 @@ var config = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        include: [
-          path.resolve(__dirname, "./src/components")
-        ],
         use: {
           loader: "babel-loader"
         },
@@ -48,16 +43,5 @@ var config = {
   },
   plugins: [htmlWebpackPlugin]
 };
-
-// if (process.env.NODE_ENV === 'production') {
-//   console.log(process.env.NODE_ENV);
-//   config.plugins.push(
-//     new webpack.DefinePlugin({
-//       'process.env': {
-//         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-//       }
-//     })
-//   )
-// }
 
 module.exports = config;

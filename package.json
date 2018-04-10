@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open --hot",
-    "build": "rm -fr dist/* && NODE_ENV='production' webpack --mode=production --module-bind 'jsx=babel-loader'",
+    "build": "rm -fr dist/* &&  webpack --mode=production",
     "prod": "webpack --mode production --module-bind 'js=babel-loader' --module-bind 'jsx=babel-loader' --resolve-extensions .js,.jsx",
     "deploy": "npm run build && firebase deploy",
     "firebase-init": "firebase login && firebase init"
