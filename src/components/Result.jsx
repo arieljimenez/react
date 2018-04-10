@@ -5,6 +5,7 @@ const queryString = require('query-string');
 const api = require('../utils/api');
 
 const PlayerPreview = require('./PlayerPreview')
+const Loading = require('./Loading');
 
 class Result extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Result extends React.Component {
     var loading = this.state.loading;
 
     if (loading === true) {
-      return <p>L o a d i n g</p>
+      return <Loading />
     }
 
     if (error) {

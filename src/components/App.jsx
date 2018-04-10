@@ -5,8 +5,8 @@ const Route = ReactRouter.Route;
 const Router = ReactRouter.BrowserRouter;
 const Switch = ReactRouter.Switch;
 
-const Nav = require('./Nav');
 const Home = require('./Home');
+const Nav = require('./Nav');
 const Battle = require('./Battle');
 const Popular = require('./Popular');
 const Result = require('./Result');

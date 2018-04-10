@@ -3,6 +3,8 @@ const PropType = require('prop-types');
 
 const api = require('../utils/api');
 
+const Loading = require('./Loading');
+
 class Popular extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +49,7 @@ class Popular extends React.Component {
           selectedLanguage={this.state.selectedLanguage}
           onSelect={this.updateLanguage} />
         {!this.state.repos
-          ? <p>LOADING</p>
+          ? <Loading />
           : <RepoGrid repos={this.state.repos} />}
       </div>
     )

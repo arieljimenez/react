@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require('axios');
 const ID = '49d56faf5ea8d730802f';
 const SEC = 'ba3843681c81c9f3cdb03f6d4e55415f13215ba7';
 const PARAMS = '?client_id=' + ID + '&client_secret=' + SEC;
@@ -63,7 +63,7 @@ module.exports = {
   },
 
   fetchPopularRepos: (lang) => {
-    var encodedURI = window.encodeURI('https://api.github.com/search/repositories?q=stars:>1+language:' + lang + '&sort=stars&order=desc&type=Repositories');
+    var encodedURI = window.encodeURI('https://api.github.com/search/repositories?q=stars:>1+language:' + lang + '&sort=stars&order=desc&type=Repositories' + PARAMS);
     return axios.get(encodedURI)
       .then((response) => {
         return response.data.items;

@@ -1,11 +1,14 @@
 {
   "name": "react_training",
   "version": "1.0.0",
-  "description": "",
+  "description": "Github battle app",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open",
-    "prod": "webpack --mode production"
+    "dev": "webpack-dev-server --mode=development --open --hot",
+    "build": "rm -fr dist/* && NODE_ENV='production' webpack --mode=production --module-bind 'jsx=babel-loader'",
+    "prod": "webpack --mode production --module-bind 'js=babel-loader' --module-bind 'jsx=babel-loader' --resolve-extensions .js,.jsx",
+    "deploy": "npm run build && firebase deploy",
+    "firebase-init": "firebase login && firebase init"
   },
   "babel": {
     "presets": [
@@ -24,7 +27,10 @@
     "url": "https://github.com/arieljimenez/react/issues"
   },
   "homepage": "https://github.com/arieljimenez/react#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
   "devDependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
@@ -32,11 +38,12 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "firebase-tools": "^3.18.2",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
     "prop-types": "^15.6.1",
     "query-string": "^6.0.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
